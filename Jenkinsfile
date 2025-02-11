@@ -10,6 +10,8 @@ pipeline {
 
         stage('Install') {
             steps {
+                sh 'curl -sS https://getcomposer.org/installer | php'
+                sh 'sudo mv composer.phar /usr/local/bin/composer'        
                 sh 'composer install'
             }
         }
