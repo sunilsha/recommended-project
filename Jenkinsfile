@@ -24,6 +24,8 @@ pipeline {
         stage('Build') {
             steps {
                 // Your build steps
+                echo 'Build stage: no current build steps defined.'
+
             }
         }
     }
