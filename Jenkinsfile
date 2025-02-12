@@ -10,16 +10,15 @@ pipeline {
 
         stage('Install') {
             steps {
-                sh 'curl -sS https://getcomposer.org/installer | php'
-                sh 'sudo mv composer.phar /usr/local/bin/composer'        
-                sh 'composer install'
+                sh 'curl -sS https://getcomposer.org/installer | /opt/homebrew/bin/php'
+                sh '/opt/homebrew/bin/php composer.phar install'
             }
         }
 
         stage('Test') {
             steps {
                 // Run Drupal tests or other testing framework as needed
-                sh './vendor/bin/phpunit -c web/core'
+                sh '/opt/homebrew/bin/phpunit -c web/core'
             }
         }
         
