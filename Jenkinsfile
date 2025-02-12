@@ -1,6 +1,10 @@
 pipeline {
-    agent any
-
+    agent {
+        docker {
+            image 'kxwang/drupal-ci'
+            args '-u root'  // use root user if you need elevated permissions 
+        }
+    }
     stages {
         stage('Checkout') {
             steps {
