@@ -22,7 +22,7 @@ pipeline {
             steps {
                 // Run Drupal tests or other testing framework as needed
                 echo 'Test stage: running unit tests'
-                sh 'sleep 10'
+                sh 'for ((i=1; i<=10; i++)); do echo "Executing step $i"; sleep 2; done'
                 echo 'Test stage: finished running unit tests'
             }
         }
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 // Your build steps
                 echo 'Build stage: running build.'
-                sh 'sleep 10'
+                sh 'for ((i=1; i<=10; i++)); do echo "...................."; sleep 2; done'
                 echo 'Build stage: finished build.'
 
             }
