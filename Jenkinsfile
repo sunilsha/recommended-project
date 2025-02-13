@@ -10,7 +10,7 @@ pipeline {
         stage('Install') {
             steps {
                 echo 'Install stage: start'
-                sh 'which php'
+                //sh 'which php'
                 sh 'for ((i=1; i<=50; i++)); do echo "Executing step $i"; sleep 1; done'
                 echo 'Install stage: finshed'
                 //sh 'curl -sS https://getcomposer.org/installer | php'
