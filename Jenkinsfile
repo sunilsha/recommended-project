@@ -9,8 +9,12 @@ pipeline {
 
         stage('Install') {
             steps {
-                sh 'curl -sS https://getcomposer.org/installer | php'
-                sh 'php composer.phar install'
+                echo 'Install stage: start'
+                sh 'which php'
+                sh 'sleep 10'
+                echo 'Install stage: finshed'
+                //sh 'curl -sS https://getcomposer.org/installer | php'
+                //sh 'php composer.phar install'
             }
         }
 
