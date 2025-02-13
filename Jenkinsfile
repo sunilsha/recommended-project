@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'Install stage: start'
                 sh 'which php'
-                sh 'sleep 10'
+                sh 'for ((i=1; i<=50; i++)); do echo "Executing step $i"; sleep 1; done'
                 echo 'Install stage: finshed'
                 //sh 'curl -sS https://getcomposer.org/installer | php'
                 //sh 'php composer.phar install'
