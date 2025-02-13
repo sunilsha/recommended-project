@@ -9,8 +9,8 @@ pipeline {
 
         stage('Install') {
             steps {
-                sh 'curl -sS https://getcomposer.org/installer | /opt/homebrew/bin/php'
-                sh '/opt/homebrew/bin/php composer.phar install'
+                sh 'curl -sS https://getcomposer.org/installer | php'
+                sh 'php composer.phar install'
             }
         }
 
@@ -18,13 +18,17 @@ pipeline {
             steps {
                 // Run Drupal tests or other testing framework as needed
                 echo 'Test stage: running unit tests'
+                sh 'sleep 10'
+                echo 'Test stage: finished running unit tests'
             }
         }
         
         stage('Build') {
             steps {
                 // Your build steps
-                echo 'Build stage: no current build steps defined.'
+                echo 'Build stage: running build.'
+                sh 'sleep 10'
+                echo 'Build stage: finished build.'
 
             }
         }
