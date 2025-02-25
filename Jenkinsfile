@@ -13,10 +13,6 @@ pipeline {
                         wait: true // Waits for the completion of the triggered job
                     )
                     echo "Result: ${artifactLocationBuild.result}"
-                    echo "=== RunWrapper Object Properties ==="
-                    artifactLocationBuild.metaClass.properties.each { property ->
-                        echo "${property.name}: ${artifactLocationBuild[property.name]}"
-                    }                    
                     //PRESIGNED_URL = readFile('presigned_url.txt').trim()
                 }
             }
