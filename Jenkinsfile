@@ -1,9 +1,22 @@
 pipeline {
     agent any
-    triggers {
-        upstream(upstreamProjects: "poc-pre-build-job", threshold: hudson.model.Result.SUCCESS)
-    }    
+    //triggers {
+    //    upstream(upstreamProjects: "poc-pre-build-job", threshold: hudson.model.Result.SUCCESS)
+    //}    
     stages {
+        stage('Generate Pre-Signed URL') {
+            steps {
+                script {
+                    // Trigger the 'Generate Pre-Signed URL' job
+                    def artifactLocationBuild = build(
+                        job: 'poc-pre-build-job', // Full path if within folders, e.g., 'Folder/Generate_Pre-Signed_URL_Job'
+                        wait: true // Waits for the completion of the triggered job
+                    )
+                    echo "Result: ${artifactLocationBuild.result}"
+                    //PRESIGNED_URL = readFile('presigned_url.txt').trim()
+                }
+            }
+        }
         stage('Checkout') {
             steps {
                 git 'https://github.com/drupal/recommended-project.git'
