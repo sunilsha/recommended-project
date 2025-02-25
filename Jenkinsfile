@@ -33,9 +33,13 @@ pipeline {
                 echo 'Build stage: running build.'
                 sh 'for ((i=1; i<=10; i++)); do echo "Executing step $i"; sleep 2; done'
                 echo 'Build stage: finished build.'
-
             }
         }
+        stage('Deploy') {
+            steps {
+                build 'poc-deploy-drupal-code'
+            }
+        }        
     }
 
     post {
