@@ -1,0 +1,16 @@
+version: 1.0.0
+variables:
+  global:
+    BASIC_AUTH_USER: Something
+    BASIC_AUTH_PASS: SomethingPass
+events:
+  build:
+    steps:
+      - install:
+          script:
+            - 'echo "install step"'
+      - test:
+            - 'echo "test step"'
+      - deploy:
+          script:
+            - 'echo "deploy step"'
