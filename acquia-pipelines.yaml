@@ -10,6 +10,7 @@ events:
           script:
             - 'echo "install step"'
       - test:
+          script:
             - 'echo "test step"'
       - deploy:
           script:
