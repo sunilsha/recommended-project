@@ -1,12 +1,14 @@
 pipeline {
     agent any
+    triggers {
+        upstream(upstreamProjects: "poc-pre-build-job", threshold: hudson.model.Result.SUCCESS)
+    }    
     stages {
         stage('Checkout') {
             steps {
                 git 'https://github.com/drupal/recommended-project.git'
             }
         }
-
         stage('Install') {
             steps {
                 echo 'Install stage: start'
