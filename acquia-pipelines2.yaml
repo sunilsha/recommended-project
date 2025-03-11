@@ -21,7 +21,7 @@ events:
             - 'echo "Launch ODE"'
       - e2e_test:
           script:
-            - 'echo "Run Tests'
+            - 'echo "Run Tests"'
       - release:
           script:
             - 'echo "Release Step"'
