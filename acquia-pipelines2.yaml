@@ -10,7 +10,7 @@ events:
     steps:
       - install:
           script:
-            - 'echo "composer install"'
+            - 'composer install'
       - deploy:
           script:
             - 'echo "Deploy Steps"'
