@@ -11,9 +11,9 @@ events:
       - install:
           script:
             - 'composer install'
-            - 'nvm install v8.11.1'
-            - 'nvm use 8.11.1'
-            - 'npm install'            
+#            - 'nvm install v8.11.1'
+#            - 'nvm use 8.11.1'
+#            - 'npm install'            
       - deploy:
           script:
             - 'echo "Deploy Steps"'
