@@ -10,7 +10,7 @@ events:
     steps:
       - install:
           script:
-            - 'composer install'
+#            - 'composer install'
 #            - 'nvm install v8.11.1'
 #            - 'nvm use 8.11.1'
 #            - 'npm install'            
